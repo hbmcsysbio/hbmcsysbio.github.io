@@ -3,9 +3,10 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Laboratory Website Template</title>
+	<title>Access HBMC Sysbio Lab</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css">
 	<link href="css/ulstyle.css" rel="stylesheet" type="text/css">
+	    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZsUWSWvloCQM3U96fkX14xqzyKbxPiMt"></script>
 </head>
 <body>
 <div id="header">
@@ -17,19 +18,16 @@
 				<a href="index.html">home</a>
 			</li>
 			<li>
-				<a href="about.html">People</a>
+				<a href="people.html">People</a>
 			</li>
 			<li>
-				<a href="services.html">Research</a>
+				<a href="research.html">Research</a>
 			</li>
 			<li>
-				<a href="location.html">Publications</a>
+				<a href="publications.html">Publications</a>
 			</li>
 			<li>
-				<a href="location.html">Events</a>
-			</li>
-			<li>
-				<a href="blog.html">Available positions</a>
+				<a href="positions.html">Available positions</a>
 			</li>
 			<li>
 				<a href="contact.html">contact</a>
@@ -38,31 +36,6 @@
 	</div>
 
 <div id="body">
-		<div class="content">
-			<img src="images/telephone.jpg" alt="">
-			<h2>send us a message</h2>
-			<form action="index.html">
-				<label for="firstName"> <span>first name*</span>
-					<input type="text" name="first" id="firstName">
-				</label>
-				<label for="lastName"> <span>last name*</span>
-					<input type="text" name="last" id="lastName">
-				</label>
-				<label for="email"> <span>email*</span>
-					<input type="text" name="email" id="email">
-				</label>
-				<label for="phoneNumber"> <span>Phone Number</span>
-					<input type="text" name="phone" id="phoneNumber">
-				</label>
-				<label for="subject"> <span>subject*</span>
-					<input type="text" name="subject" id="subject">
-				</label>
-				<label for="message"> <span>message</span>
-					<textarea name="" id="message" cols="30" rows="10"></textarea>
-				</label>
-				<input type="submit" value="" id="submit">
-			</form>
-		</div>
 		<div class="sidebar">
 			<h3>contact</h3>
 			<ul>
@@ -70,24 +43,28 @@
 					<span class="address">address</span>
 					<ul>
 						<li>
-							Illumelabs
+							福建省福州市仓山区上下店路15号<br>
+							福建农林大学<br>
+							下安实验1号楼海峡联合研究院6层 <br>
+							邮编： 350028 <br><br>
+
 						</li>
 						<li>
-							Diagnostic Center
+							Floor 6, Xiaan #1 Bldg.,<br>
+							Haixia Institute of Science and Technology<br>
+							Fujian Agriculture and Forestry University<br>
+							No.15 Shangxiadian Road, Cangshan District<br>
+							Fuzhou 350028, China
+
 						</li>
-						<li>
-							3952 Glen Falls Road
-						</li>
-						<li>
-							Wayne, PA 19088
-						</li>
+			
 					</ul>
 				</li>
 				<li>
 					<span class="phone">telephone</span>
 					<ul>
 						<li>
-							215.859.9423
+							
 						</li>
 					</ul>
 				</li>
@@ -95,34 +72,33 @@
 					<span class="email">email</span>
 					<ul>
 						<li>
-							<a href="http://www.freewebsitetemplates.com/misc/contact">nyc@volumeone.com</a>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<span class="twitter">twitter</span>
-					<ul>
-						<li>
-							<a href="http://freewebsitetemplates.com/go/twitter/">@mattovolumeone</a>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<span class="facebook">facebook</span>
-					<ul>
-						<li>
-							<a href="http://freewebsitetemplates.com/go/facebook/">www.facebook/illumelabs</a>
+							<a href="">fjzhuATfafu.edu.cn</a>
 						</li>
 					</ul>
 				</li>
 			</ul>
 		</div>
+		<div class="content">
+			 <!--百度地图容器-->
+    <div style="width:670px;height:550px;border:#ccc solid 1px;font-size:12px" id="map"></div>
+			
+			<h2>Shuttles</h2>
+			<h3>From Fuzhou Railway Station</h3>
+			<p>
+				火车站北广场站上车， 乘坐55路至农林大学南门站
+			</p>
+			<h3>From Fuzhou Changle International Airport</h3>
+			<p>
+				机场1楼乘坐空港快线福大怡山线，空港快线怡山大厦站下车后，步行至凤凰池站转乘39路至农林大学南门站
+			</p>
+			
+</div>
 	</div>
 	<div id="footer">
 		<div>
-		  <p> <span>2020&nbsp; &nbsp; |&nbsp; &nbsp; Fujian Agriculture and Forestry University&nbsp; &nbsp; |&nbsp; &nbsp; &nbsp;Horticultural Plant Biology and Metabolomics Center </span></p>
+		  <p> <span>2020&nbsp; &nbsp; |&nbsp; &nbsp; Horticultural Plant Biology and Metabolomics Center&nbsp; &nbsp;|&nbsp; &nbsp;&nbsp;Center for Agroforestry Mega Data Science</span></p>
 		  <ul>
-				<li id="facebook"> </li>
+			<li id="facebook"> </li>
 				<li id="twitter"> </li>
 				<li id="googleplus"> </li>
 				<li id="rss"> </li>
@@ -131,4 +107,63 @@
 		</div>
 		</div>
 </body>
+	
+<script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+      createMap();//创建地图
+      setMapEvent();//设置地图事件
+      addMapControl();//向地图添加控件
+      addMapOverlay();//向地图添加覆盖物
+    }
+    function createMap(){ 
+      map = new BMap.Map("map"); 
+      map.centerAndZoom(new BMap.Point(119.243167,26.083219),17);
+    }
+    function setMapEvent(){
+      map.enableScrollWheelZoom();
+      map.enableKeyboard();
+      map.enableDragging();
+      map.enableDoubleClickZoom()
+    }
+    function addClickHandler(target,window){
+      target.addEventListener("click",function(){
+        target.openInfoWindow(window);
+      });
+    }
+    function addMapOverlay(){
+      var markers = [
+        {content:"",title:"实验室位置",imageOffset: {width:-46,height:-21},position:{lat:26.083949,lng:119.241928}}
+      ];
+      for(var index = 0; index < markers.length; index++ ){
+        var point = new BMap.Point(markers[index].position.lng,markers[index].position.lat);
+        var marker = new BMap.Marker(point,{icon:new BMap.Icon("http://api.map.baidu.com/lbsapi/createmap/images/icon.png",new BMap.Size(20,25),{
+          imageOffset: new BMap.Size(markers[index].imageOffset.width,markers[index].imageOffset.height)
+        })});
+        var label = new BMap.Label(markers[index].title,{offset: new BMap.Size(25,5)});
+        var opts = {
+          width: 200,
+          title: markers[index].title,
+          enableMessage: false
+        };
+        var infoWindow = new BMap.InfoWindow(markers[index].content,opts);
+        marker.setLabel(label);
+        addClickHandler(marker,infoWindow);
+        map.addOverlay(marker);
+      };
+    }
+    //向地图添加控件
+    function addMapControl(){
+      var scaleControl = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+      scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+      map.addControl(scaleControl);
+      var navControl = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+      map.addControl(navControl);
+      var overviewControl = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:true});
+      map.addControl(overviewControl);
+    }
+    var map;
+      initMap();
+  </script>
+	
 </html>
